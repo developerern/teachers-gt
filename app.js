@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const mysql = require('mysql');
+const config = require('./config');
 
 const bodyParser = require('body-parser');
 
@@ -37,7 +37,7 @@ app.use(function(err, req, res, next) {
   res.send({ message: err.message })
 });
 
-app.listen(80, () => {
+app.listen(config.port, () => {
   console.log("Server is up and listening on 80...")
 });
 
