@@ -71,7 +71,7 @@ describe('/POST suspend', () => {
   });
 
 
-  it('it should return Error 400 and an error message if there are not two fields in the request body', async () => {
+  it('it should return Error 400 and an error message if there is not exactly one field in the request body', async () => {
     const requester = chai.request(app).keepOpen();
 
     const requestBody = {};
