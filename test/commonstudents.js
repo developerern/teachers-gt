@@ -89,7 +89,7 @@ describe('/GET commonstudents', () => {
   });
 
 
-  it('it should return Error 400 and an error message if there is more than one query parameter othan than teacher', async () => {
+  it('it should return Error 400 and an error message if there is more than one query parameter other than teacher', async () => {
     const requester = chai.request(app).keepOpen();
 
     const res = await requester
@@ -100,21 +100,6 @@ describe('/GET commonstudents', () => {
     res.body.should.have.own.property('message');
     res.body.should.deep.equal({
       message: "the number of parameters in the query string is not 1" });
-    requester.close();
-  });
-
-
-  it('it should return Error 400 and an error message if teacher query parameter is missing from the query string', async () => {
-    const requester = chai.request(app).keepOpen();
-
-    const res = await requester
-      .get('/api/commonstudents?extra=unnecessary');
-
-    res.should.have.status(400);
-    res.body.should.be.a('object');
-    res.body.should.have.own.property('message');
-    res.body.should.deep.equal({
-      message: "teacher query parameter is missing from the query string" });
     requester.close();
   });
 
