@@ -36,6 +36,18 @@ Run SQL script fixtures.sql (For Windows)
 > mysql -u root -p < fixtures.sql
 ```
 
+## Running the development server
+
+Either run by node
+```
+> node app
+```
+
+or npm
+```
+> npm start
+```
+
 ## Running the tests
 
 ```

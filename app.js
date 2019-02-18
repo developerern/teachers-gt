@@ -38,7 +38,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(config.port, () => {
-  console.log("Server is up and listening on 80...")
+  console.log(`Server is up and listening on port ${config.port}`)
 });
 
 module.exports = app;
