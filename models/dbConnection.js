@@ -24,12 +24,6 @@ pool.getConnection((err, connection) => {
     }
   }
 
-  // console.log('dbConnection.js', process.env.NODE_ENV)
-  // pool.query("CREATE DATABASE IF NOT EXISTS teacherdb", (err, result) => {
-  //   if (err) throw err;
-  //   console.log("Database created");
-  // });
-
   if (connection) connection.release();
 
   return
