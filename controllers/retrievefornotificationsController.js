@@ -23,13 +23,15 @@ const retrievefornotificationsController = async(req, res) => {
   const studentsEmailAddresses = [];
   const words = notification.split(' ');
   let invalidEmailAddresses = [];
+
+  if (!isValidEmail(teacher)) invalidEmailAddresses.push(teacher);
   for (let word of words) {
     if (word.startsWith('@') && word.length > 1) {
-      let token = word.slice(1)
+      let token = word.slice(1);
       if (isValidEmail(token)) {
         studentsEmailAddresses.push(token);
       } else {
-        invalidEmailAddresses.push(token)
+        invalidEmailAddresses.push(token);
       }
     } else {
       message.push(word);
