@@ -8,13 +8,10 @@ const retrievefornotificationsController = require('../controllers/retrieveforno
 
 router.all("/api/register", methods(['POST']), registerController);
 
-// Part 2
 router.all("/api/commonstudents", methods(['GET']), commonstudentsController);
 
-// Part 3
 router.all("/api/suspend", methods(['POST']), suspendController);
 
-// Part 4
 router.all("/api/retrievefornotifications", methods(['POST']), retrievefornotificationsController);
 
 module.exports = router;
