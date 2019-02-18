@@ -103,11 +103,11 @@ describe('/POST retrievefornotifications', () => {
       });
   });
 
-  it('it should return Error 400 and an error message if students field contains at least one invalid email in the request body', async () => {
+  it('it should return Error 400 and an error message if the request body contains at least one invalid email in either the teacher or notification field', async () => {
     const requester = chai.request(app).keepOpen();
 
     const requestBody = {
-      "teacher": "teacherken@example.com",
+      "teacher": "teacherkenexample.com",
       "notification": "Hello students! @invalidEmail1 @invalidEmail2"
     };
 
@@ -119,7 +119,7 @@ describe('/POST retrievefornotifications', () => {
         res.body.should.be.a('object');
         res.body.should.have.own.property('message');
         res.body.should.deep.equal({
-          message: `invalidEmail1, invalidEmail2 is/are invalid email(s)` });
+          message: `teacherkenexample.com, invalidEmail1, invalidEmail2 is/are invalid email(s)` });
         requester.close();
       });
   });
