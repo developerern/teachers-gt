@@ -38,6 +38,8 @@ Run SQL script fixtures.sql (For Windows)
 
 ## Running the development server
 
+Configure the port in config.js. The default port is 80.
+
 Either run by node
 ```
 > node app
