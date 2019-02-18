@@ -44,10 +44,6 @@ describe('/POST suspend', () => {
               const isSuspended = response[0]['suspended'];
 
               isSuspended.should.equal(1);
-              // res.body.should.be.a('object');
-              // res.body.should.deep.equal({
-              //   "message": "studentjob@example.com has already been suspended."
-              // });
             } catch (err) {
               console.error(err);
             }
