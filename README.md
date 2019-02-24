@@ -40,6 +40,14 @@ Run SQL script fixtures.sql (For Windows)
 
 Configure the port in config.js. The default port is 80.
 
+Grant app access to MySQL Server by opening MySQL 8.0 Command Line Client, and keying in the following
+```
+> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourRootPassword';
+> FLUSH PRIVILEGES;
+```
+
+Change line 8 in /models/dbConnection.js to 'YourRootPassword' if your environment's MySQL root password is not 'mysql'
+
 Either run by node
 ```
 > node app
